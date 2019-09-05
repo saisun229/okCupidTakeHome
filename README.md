@@ -55,7 +55,8 @@ build, and a refresh.
   update the essay preview.
 * To generate the essay preview, choose one of the available templates at
   random.
-* Changing one answer should not re-roll the chosen templates of other fields.
+* Changing one answer should re-roll that answer's template, but not the
+chosen templates of other fields.
 * The user's responses in the essay preview should be bold.
 * When the user has answered and blurred all questions, an "Edit" button
   appears.
