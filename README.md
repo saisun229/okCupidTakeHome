@@ -28,7 +28,7 @@ First, make sure you have a modern version of `node` and `yarn.`
 
 Run `yarn install` before getting started.
 
-Make your changes to these files, then run `npm start` to run the compiler.
+Make your changes to these files, then run `yarn start` to run the compiler.
 
 A new window should open; if not, you can visit your page at
 http://127.0.0.1:3000/. Any changes to the project files should trigger a new
