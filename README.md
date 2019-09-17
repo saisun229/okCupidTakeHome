@@ -56,12 +56,14 @@ build, and a refresh.
 * To generate the essay preview, choose one of the available templates at
   random.
 * Changing one answer should re-roll that answer's template, but not the
-chosen templates of other fields.
+  chosen templates of other fields.
 * The user's responses in the essay preview should be bold.
 * When the user has answered and blurred all questions, an "Edit" button
   appears.
 * When a user clicks "Edit", replace both columns with a centered textarea
   containing the generated essay content.
+* When a user clicks "Start over", they should see the original screen
+  without any user text.
 
 Some more details:
 
