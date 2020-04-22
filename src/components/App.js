@@ -1,33 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { increment } from "../madlibs";
 
 require("./App.scss");
 
-class App extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    counter: PropTypes.number.isRequired,
-  };
+const App = ({ counter, increment }) => {
+	return (
+		<div className="match-area">
+			<p>Counter (to make sure redux works): {counter}</p>
 
-  render() {
-    return (
-      <div className="matchArea">
-        <p>Counter (to make sure redux works): {this.props.counter}</p>
-
-        <p>
-          <button onClick={() => this.props.dispatch(increment())}>
-            Increment
+			<p>
+				<button onClick={increment}>
+					Increment
           </button>
-        </p>
-      </div>
-    );
-  }
+			</p>
+		</div>
+	)
 }
 
 function mapStateToProps(state) {
   return state;
-}
+};
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = {
+	increment,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
