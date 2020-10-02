@@ -40,23 +40,26 @@ build, and a refresh.
 * The main app folder, `/src/`, where you'll be making your changes.
 * A [ducks](https://medium.com/@scbarrus/the-ducks-file-structure-for-redux-d63c41b7035c#.5chqfp84p)
   file, `/src/madlibs.js`. This file contains the reducer, the initial state,
-  along with some example actions.
+  along with an example action.
 * A constants file, `/src/constants.js`. It contains the questions and
   potential essay templates.
 * A helpers file, `/src/helpers.js`. It contains a function with templates
   for a given field.
-* A folder for React components, `/src/components/`.
+* A folder for React components, `/src/components/`, and one for Redux
+  containers, `src/containers`.
 
 ## Requirements
 
 * Prompts appear in the left column, and the essay preview on the right.
-* Each "prompt" consists of a question and an input.
-* When the user blurs the input, the app should "save" their response and
-  update the essay preview.
+* Each prompt consists of a question and an input.
+* When the user blurs the input, "save" their response and update the essay
+  preview.
 * To generate the essay preview, choose one of the available templates at
   random.
 * Changing one answer should re-roll that answer's template, but not the
   chosen templates of other fields.
+* Blurring a field without changing the answer should not re-roll that field's
+  template.
 * The user's responses in the essay preview should be bold.
 * When the user has answered and blurred all questions, an "Edit" button
   appears.
@@ -68,15 +71,20 @@ build, and a refresh.
 Some more details:
 
 * Don't worry about vendor prefixes; target the latest version of Chrome.
-* The app should compile without any errors.
+* The app should compile without any errors or linting warnings.
 * Create as many or as few subcomponents as you like.
-* Use whatever libraries you want. (But remember: if you worked here, we would
-  want to pay attention to payload size. Choose wisely!)
-* Eyeball the margins, paddings, and colors.
+* Use whatever libraries you want. But remember: if you worked here, we would
+  pay attention to payload size. Choose wisely!
+* Feel free to eyeball the margins, paddings, and colors.
 
 ## When you're done
 
-Remove the `node_modules` directory, zip up this project directory, and send it
-back to us.
+Replace this file with a brief readme of your own. We are interested in hearing
+about things like architectural decisions you made, problems you ran into,
+trade-offs you weighed, or anything else you'd like us to know. But do recall:
+brevity is the soul of wit!
+
+Then, remove the `node_modules` directory, zip up this project directory, and
+send it back to us.
 
 Thanks for your time, and good luck! We look forward to hearing from you!
