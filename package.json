@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "jest --env=jsdom",
     "test:watch": "jest --watchAll --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint:warn-only": "eslint src; exit 0"
   },
   "browserslist": {
     "production": [
@@ -38,12 +39,12 @@
     "babel-jest": "24.8.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
-    "eslint": "6.1.0",
-    "eslint-config-airbnb": "18.0.1",
-    "eslint-plugin-import": "2.18.2",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jest": "22.15.1",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-jsx-a11y": "6.3.0",
+    "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "1.7.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.8.0",
