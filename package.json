@@ -17,8 +17,7 @@
     "build": "react-scripts build",
     "test": "jest --env=jsdom",
     "test:watch": "jest --watchAll --env=jsdom",
-    "eject": "react-scripts eject",
-    "eslint:warn-only": "eslint src; exit 0"
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
