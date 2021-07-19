@@ -19,6 +19,9 @@
     "test:watch": "jest --watchAll --env=jsdom",
     "eject": "react-scripts eject"
   },
+	"engines": {
+		"node": "12.18.4"
+	},
   "browserslist": {
     "production": [
       ">0.2%",
