@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-require('./App.scss');
+import { increment } from "../madlibs";
 
-const App = ({ counter, increment }) => (
-  <div className="match-area">
-    Counter (to make sure redux works): {counter}
-    <br />
-    <br />
-    <button onClick={increment}>
-      Increment
-    </button>
-  </div>
-);
+require("./App.scss");
 
-App.propTypes = {
-  counter: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired,
+const App = () => {
+  const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counter);
+
+  return (
+    <div className="match-area">
+      Counter (to make sure redux works): {counter}
+      <br />
+      <br />
+      <button onClick={() => dispatch(increment())}>Increment</button>
+    </div>
+  );
 };
 
 export default App;

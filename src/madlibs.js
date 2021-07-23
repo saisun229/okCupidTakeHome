@@ -1,14 +1,10 @@
-import {
-  FIELD_NAMES,
-} from './constants';
-
+import { FIELD_NAMES } from "./constants";
 
 // Action types
 // ----------------------------------------------------------------------------
 
-export const SUBMIT_FIELD = 'MADLIBS.SUBMIT_FIELD';
-export const INCREMENT_COUNTER = 'MADLIBS.INCREMENT_COUNTER';
-
+export const SUBMIT_FIELD = "MADLIBS.SUBMIT_FIELD";
+export const INCREMENT_COUNTER = "MADLIBS.INCREMENT_COUNTER";
 
 // Initial state
 // ----------------------------------------------------------------------------
@@ -24,11 +20,10 @@ export const INITIAL_STATE = {
   ],
 
   fieldAnswers: {},
-  essayText: '',
+  essayText: "",
 
   counter: 1,
 };
-
 
 // Reducer
 // ----------------------------------------------------------------------------
@@ -50,7 +45,6 @@ export function reducer(state = INITIAL_STATE, action) {
       return state;
   }
 }
-
 
 // Action creators
 // ----------------------------------------------------------------------------

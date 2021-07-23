@@ -36,46 +36,45 @@ build, and a refresh.
 
 ## What's there
 
-* Screenshots of the app's design, in `/assets/`.
-* The main app folder, `/src/`, where you'll be making your changes.
-* A [ducks](https://medium.com/@scbarrus/the-ducks-file-structure-for-redux-d63c41b7035c#.5chqfp84p)
+- Screenshots of the app's design, in `/assets/`.
+- The main app folder, `/src/`, where you'll be making your changes.
+- A [ducks](https://medium.com/@scbarrus/the-ducks-file-structure-for-redux-d63c41b7035c#.5chqfp84p)
   file, `/src/madlibs.js`. This file contains the reducer, the initial state,
   along with an example action.
-* A constants file, `/src/constants.js`. It contains the questions and
+- A constants file, `/src/constants.js`. It contains the questions and
   potential essay templates.
-* A helpers file, `/src/helpers.js`. It contains a function with templates
+- A helpers file, `/src/helpers.js`. It contains a function with templates
   for a given field.
-* A folder for React components, `/src/components/`, and one for Redux
-  containers, `src/containers`.
+- A folder for React components, `/src/components/`
 
 ## Requirements
 
-* Prompts appear in the left column, and the essay preview on the right.
-* Each prompt consists of a question and an input.
-* When the user blurs the input, "save" their response and update the essay
+- Prompts appear in the left column, and the essay preview on the right.
+- Each prompt consists of a question and an input.
+- When the user blurs the input, "save" their response and update the essay
   preview.
-* To generate the essay preview, choose one of the available templates at
+- To generate the essay preview, choose one of the available templates at
   random.
-* Changing one answer should re-roll that answer's template, but not the
+- Changing one answer should re-roll that answer's template, but not the
   chosen templates of other fields.
-* Blurring a field without changing the answer should not re-roll that field's
+- Blurring a field without changing the answer should not re-roll that field's
   template.
-* The user's responses in the essay preview should be bold.
-* When the user has answered and blurred all questions, an "Edit" button
+- The user's responses in the essay preview should be bold.
+- When the user has answered and blurred all questions, an "Edit" button
   appears.
-* When a user clicks "Edit", replace both columns with a centered textarea
+- When a user clicks "Edit", replace both columns with a centered textarea
   containing the generated essay content.
-* When a user clicks "Start over", they should see the original screen
+- When a user clicks "Start over", they should see the original screen
   without any user text.
 
 Some more details:
 
-* Don't worry about vendor prefixes; target the latest version of Chrome.
-* The app should compile without any errors or linting warnings.
-* Create as many or as few subcomponents as you like.
-* Use whatever libraries you want. But remember: if you worked here, we would
+- Don't worry about vendor prefixes; target the latest version of Chrome.
+- The app should compile without any errors or linting warnings.
+- Create as many or as few subcomponents as you like.
+- Use whatever libraries you want. But remember: if you worked here, we would
   pay attention to payload size. Choose wisely!
-* Feel free to eyeball the margins, paddings, and colors.
+- Feel free to eyeball the margins, paddings, and colors.
 
 ## When you're done
 
