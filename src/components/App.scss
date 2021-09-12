@@ -1,3 +1,16 @@
-.match-area {
-  padding: 20px;
+@import "../mixins/mixin.scss";
+.main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  @include sm {
+    flex-direction: column;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #094aa4;
+  color: #444854;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }

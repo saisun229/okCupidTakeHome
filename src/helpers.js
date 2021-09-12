@@ -1,6 +1,6 @@
 import { FIELD_NAMES } from "./constants";
 
-export function getTextTemplates(fieldName) {
+const getTextTemplates = (fieldName) => {
   switch (fieldName) {
     case FIELD_NAMES.hometown: {
       return [
@@ -72,4 +72,29 @@ export function getTextTemplates(fieldName) {
     default:
       return [];
   }
-}
+};
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive).
+ */
+const randomInt = (min, max) => {
+  const diff = max - min;
+  return Math.floor(Math.random() * diff) + min;
+};
+
+/**
+ * Gets random template for a field.
+ *
+ * @param { string } fieldName
+ * @param { string } fieldValue
+ * @returns { string }
+ */
+const getRandomTemplateAnswer = (fieldName, fieldValue) => {
+  if (!fieldValue) return "";
+  const maxLength = getTextTemplates(fieldName).length;
+  const randomIndex = randomInt(0, maxLength);
+  const template = getTextTemplates(fieldName)[randomIndex];
+  return template.replace("$answer", fieldValue);
+};
+
+export default getRandomTemplateAnswer;

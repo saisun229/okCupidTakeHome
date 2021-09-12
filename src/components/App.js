@@ -1,22 +1,25 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import { increment } from "../madlibs";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Form from "./form/form";
+import EssayText from "./essayText/essayText";
+import EssayEdit from "./essayEdit/essayEdit";
 
 require("./App.scss");
 
-const App = () => {
-  const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
-
-  return (
-    <div className="match-area">
-      Counter (to make sure redux works): {counter}
-      <br />
-      <br />
-      <button onClick={() => dispatch(increment())}>Increment</button>
-    </div>
-  );
-};
+const App = () => (
+  <Router>
+    <main className="main">
+      <Switch>
+        <Route exact path="/">
+          <Form />
+          <EssayText />
+        </Route>
+        <Route path="/edit">
+          <EssayEdit />
+        </Route>
+      </Switch>
+    </main>
+  </Router>
+);
 
 export default App;

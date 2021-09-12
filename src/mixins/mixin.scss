@@ -1,0 +1,61 @@
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+
+// Tablets and small desktops
+$screen-lg-max: 992px;
+
+// Large tablets and desktops
+$screen-xl-max: 1200px;
+
+@mixin button {
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #00d57f;
+    color: white;
+    border-color: none;
+    border: none;
+    width: 7rem;
+     &:focus, &:hover {
+       box-shadow: 1px solid lightgrey;
+     }
+ }
+
+ @mixin header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3a3a3a;
+    margin-bottom: 2rem;
+ }
+
+ // Small devices
+@mixin sm {
+    @media (max-width: #{$screen-sm-max}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin md {
+    @media (max-width: #{$screen-md-max}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin lg {
+    @media (max-width: #{$screen-lg-max}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl {
+    @media (max-width: #{$screen-xl-max}) {
+        @content;
+    }
+ }

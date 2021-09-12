@@ -1,0 +1,29 @@
+@import "../../mixins/mixin.scss";
+.essay {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50%;
+    padding: 2rem;
+    @include sm {
+      width: 100%;
+      height: 100%;
+  }
+
+    h1 {
+      @include header;
+    }
+    
+    &__highlight {
+      font-weight: bold;
+      background-color: transparent;
+    }
+
+    &__text {
+      margin-bottom: 6rem;
+    }
+
+    &__edit-button {
+      @include button;
+    }
+}

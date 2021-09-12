@@ -1,10 +1,13 @@
 import { FIELD_NAMES } from "./constants";
+import getRandomTemplateAnswer from "./helpers";
 
 // Action types
 // ----------------------------------------------------------------------------
 
 export const SUBMIT_FIELD = "MADLIBS.SUBMIT_FIELD";
 export const INCREMENT_COUNTER = "MADLIBS.INCREMENT_COUNTER";
+export const SHOW_EDIT = "MADLIBS.SHOWEDIT";
+export const START_OVER = "MADLIBS.STARTOVER";
 
 // Initial state
 // ----------------------------------------------------------------------------
@@ -20,9 +23,9 @@ export const INITIAL_STATE = {
   ],
 
   fieldAnswers: {},
+  fieldTemplates: {},
   essayText: "",
-
-  counter: 1,
+  showEdit: false,
 };
 
 // Reducer
@@ -31,14 +34,60 @@ export const INITIAL_STATE = {
 export function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case SUBMIT_FIELD: {
-      return state;
-    }
+      const { fieldName, fieldValue } = action.payload;
 
-    case INCREMENT_COUNTER: {
+      const previousFieldValue = state.fieldAnswers[fieldName];
+
+      // If field answer didn't changed than return previous state.
+      if (previousFieldValue === fieldValue) {
+        return state;
+      }
+
+      const fieldAnswersClone = {
+        ...state.fieldAnswers,
+        [fieldName]: fieldValue,
+      };
+
+      if (!fieldValue) {
+        delete fieldAnswersClone[fieldName];
+      }
+
+      const getNewEssayText = () => {
+        const answers = state.fieldOrder
+          .map((field) => {
+            if (state.fieldTemplates[field]) {
+              return state.fieldTemplates[field];
+            }
+            if (field === fieldName && !!fieldValue) {
+              return getRandomTemplateAnswer(fieldName, fieldValue);
+            }
+            return null;
+          })
+          .filter((val) => val !== null);
+        return answers.join(" ");
+      };
+
+      const showEditButton = () => {
+        const answeredFieldsLength = Object.keys(fieldAnswersClone).length;
+        return state.fieldOrder.length === answeredFieldsLength;
+      };
+
       return {
         ...state,
-        counter: state.counter + 1,
+        fieldAnswers: {
+          ...fieldAnswersClone,
+        },
+        fieldTemplates: {
+          ...state.fieldTemplates,
+          [fieldName]: getRandomTemplateAnswer(fieldName, fieldValue),
+        },
+        essayText: getNewEssayText(),
+        showEdit: showEditButton(),
       };
+    }
+
+    case START_OVER: {
+      return INITIAL_STATE;
     }
 
     default:
@@ -49,10 +98,10 @@ export function reducer(state = INITIAL_STATE, action) {
 // Action creators
 // ----------------------------------------------------------------------------
 
-export function submitField({ id, answer }) {
-  return { type: SUBMIT_FIELD, payload: { fieldName: id, answer } };
+export function submitField(id, answer) {
+  return { type: SUBMIT_FIELD, payload: { fieldName: id, fieldValue: answer } };
 }
 
-export function increment() {
-  return { type: INCREMENT_COUNTER };
+export function startOver() {
+  return { type: START_OVER };
 }

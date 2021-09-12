@@ -1,0 +1,27 @@
+@import "../../mixins/mixin.scss";
+
+.edit-essay {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 8rem);
+    height: calc(100vh - 8rem);
+    background-color: #f2f5f9;
+    padding: 0 25%;
+    @include sm {
+        padding: 2rem;
+    }
+
+    h1 {
+        @include header;
+    }
+
+    &__textarea {
+        background-color: white;
+        border: none;
+        margin-bottom: 2rem;
+    }
+
+    &__startover {
+       @include button;
+    }
+}

@@ -1,89 +1,15 @@
-# OkCupid Take-Home Exercise
+Created three form components essayEdit, essayText & form components. As those three can be handled independently communicating with Redux. Which also improves readibility and reusability.
 
-Welcome to the OkCupid take-home exercise! This will roughly model the type of
-projects you'd work on at OkCupid.
+There is also a mixin file for sass in src/mixins folder, where we have some reusable css code. Which also improves reusability. On extra time, I would also be able to define variables like colors and spacings in a variable.scss file and reuse over application.
 
-This repository contains the structure of a React/Redux application, as well as
-a webpack setup to compile the files. We'd like you to use them to implement a
-feature for us.
+Taken care of accessibility, used semantic html. Also handled responsiveness for smaller devices.
 
-Approach this exercise as if you worked here: make sure your code is clear and
-concise, and use your time wisely.
+Looked to minimize rerenders of a component to improve performance. Also taken care of lighthouse performance improvements.
 
-## The feature
+To show editable textarea on page, I have used react router instead of conditional rendering. To keep it clean and maintain standards.
 
-A feature of OkCupid, and one of the things that differentiates our site, is
-the essay -- a space for people to write about themselves on their profile. But
-it can be hard for users to write so freely without a prompt.
+It was tempting for me to React-hook-form OR formik. But I'm not really getting any benefits in this case as there are no validations and other customizations. I decided to do it without them as it would increase the app size with little to no value here in this case.
 
-We'd like to make writing an essay easy and fun, and one idea we had is to make
-a [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)-style game.
+Dynamically created form inputs from the list of form fieldnames, as requirements is supporting doing that way. Wouls help in removing duplicating code.
 
-Your job is to make a small app using React/Redux and Scss which asks a user
-some simple questions, and assembles the answers into a passable essay.
-
-## How to use
-
-First, make sure you have a modern version of `node` and `yarn.`
-
-Run `yarn install` before getting started.
-
-Make your changes to these files, then run `yarn start` to run the compiler.
-
-A new window should open; if not, you can visit your page at
-http://127.0.0.1:3000/. Any changes to the project files should trigger a new
-build, and a refresh.
-
-## What's there
-
-- Screenshots of the app's design, in `/assets/`.
-- The main app folder, `/src/`, where you'll be making your changes.
-- A [ducks](https://medium.com/@scbarrus/the-ducks-file-structure-for-redux-d63c41b7035c#.5chqfp84p)
-  file, `/src/madlibs.js`. This file contains the reducer, the initial state,
-  along with an example action.
-- A constants file, `/src/constants.js`. It contains the questions and
-  potential essay templates.
-- A helpers file, `/src/helpers.js`. It contains a function with templates
-  for a given field.
-- A folder for React components, `/src/components/`
-
-## Requirements
-
-- Prompts appear in the left column, and the essay preview on the right.
-- Each prompt consists of a question and an input.
-- When the user blurs the input, "save" their response and update the essay
-  preview.
-- To generate the essay preview, choose one of the available templates at
-  random.
-- Changing one answer should re-roll that answer's template, but not the
-  chosen templates of other fields.
-- Blurring a field without changing the answer should not re-roll that field's
-  template.
-- The user's responses in the essay preview should be bold.
-- When the user has answered and blurred all questions, an "Edit" button
-  appears.
-- When a user clicks "Edit", replace both columns with a centered textarea
-  containing the generated essay content.
-- When a user clicks "Start over", they should see the original screen
-  without any user text.
-
-Some more details:
-
-- Don't worry about vendor prefixes; target the latest version of Chrome.
-- The app should compile without any errors or linting warnings.
-- Create as many or as few subcomponents as you like.
-- Use whatever libraries you want. But remember: if you worked here, we would
-  pay attention to payload size. Choose wisely!
-- Feel free to eyeball the margins, paddings, and colors.
-
-## When you're done
-
-Replace this file with a brief readme of your own. We are interested in hearing
-about things like architectural decisions you made, problems you ran into,
-trade-offs you weighed, or anything else you'd like us to know. But do recall:
-brevity is the soul of wit!
-
-Then, remove the `node_modules` directory, zip up this project directory, and
-send it back to us.
-
-Thanks for your time, and good luck! We look forward to hearing from you!
+Last thing is that I have used a light weight package to highlight users answers by making them bold. We can just pass the users answers as keywords and essayText to get the desired output result.
